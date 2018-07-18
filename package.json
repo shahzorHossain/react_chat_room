@@ -5,12 +5,20 @@
   "dependencies": {
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "socket.io": "^2.1.1",
+    "uuid": "^3.3.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently 'yarn react' 'yarn server' ",
+    "react": "react-scripts start",
     "build": "react-scripts build",
+    "server": "nodemon src/server/index.js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "concurrently": "^3.6.0",
+    "nodemon": "^1.18.3"
   }
 }
