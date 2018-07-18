@@ -8,9 +8,14 @@ class LoginForm extends Component {
       error: "",
       nickname: ""
     };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.setUser = this.setUser.bind(this);
   }
 
   setUser = ({ user, isUser }) => {
+    console.log(user, isUser);
+
     if (isUser) {
       this.setError("User name taken");
     } else {
@@ -32,6 +37,7 @@ class LoginForm extends Component {
 
   setError = error => {
     this.setState({ error });
+    // this.setError("");
   };
 
   render() {
